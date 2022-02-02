@@ -1,5 +1,5 @@
 ﻿namespace RestAspNET_sample01 {
-    public class Startup {
+    public class Startup : IStartup {
         public Startup(IConfiguration configuration) { 
             Configuration = configuration;
         }
@@ -22,6 +22,13 @@
             app.UseAuthorization();
 
             app.MapControllers();
+        }
+
+        public void Configure(IApplicationBuilder app) {
+            throw new NotImplementedException();
+        }
+        public static WebApplicationBuilder UseStartup<TStartup>(this WebApplicationBuilder WebAppBuilder) where TStartup : IStartup {
+            var startup = Activator.CreateInstance(typeof(TStartup), web);
         }
     }
 }
