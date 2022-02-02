@@ -7,4 +7,4 @@ Base para aplicação e estudo da linguagem C#
 
 - Sacadas, padrões;
 - Estruturas, conceitos, funções;
-- ✨CRUD basico.
+- ✨CRUD básico.
